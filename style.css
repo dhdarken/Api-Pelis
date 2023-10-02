@@ -1,0 +1,95 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root{
+    --color-n:#1d1d1d;
+    --color-g:#137c32;
+    --color-v:#241744;
+    --color-vo:#100a1f;
+    --color-b:#fff;
+    --space-l:10px;
+    --size-low:16px;
+    --size-med:20px;
+    --size-hig:25px;
+    --fwei-low:200px;
+    --fwei-med:600px;
+    --fwei-max:900px;
+    --gap-nm:40px;
+    --center-p:center;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background:var(--color-b);
+	color: var(--color-n);
+}
+
+.contenedor {
+	width: 90%;
+	margin: 50px auto 100px auto;
+    display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: var(--gap-nm);
+	padding: 0 var(--space-l);
+}
+
+.contenedor .pelicula {
+	text-align: var(--center-p);
+}
+
+.contenedor .pelicula .titulo {
+	font-size: var(--size-low);
+	font-weight: var(--fwei-max);
+}
+
+.contenedor .pelicula .poster {
+	width: 100%;
+	margin-bottom: var(--space-l);
+	border-radius: var(--size-low);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);;
+}
+
+.paginacion {
+	position: fixed;
+	bottom: 0;
+	background:var(--color-vo);
+	width: 100%;
+	display: flex;
+	justify-content: var(--center-p);
+	gap: var(--size-med);
+	padding: var(--space-l);
+}
+
+.paginacion button {
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: var(--center-p);
+	justify-content: var(--center-p);
+	text-align: var(--center-p);
+	height: 50px;
+	width: var(--fwei-low);
+	background: var(--color-v);
+	color:var(--color-b);
+	border-radius: var(--gap-nm);
+	font-family: 'Montserrat', sans-serif;
+	font-weight:var(--fwei-med);
+	transition: .3s ease background;
+}
+
+.paginacion button:hover {
+	background:var(--color-g);
+}
+
+@media (max-width : 600px){
+	.contenedor{
+		grid-template-columns: 1fr 1fr;	
+		width: 100%;
+		
+	}
+}
